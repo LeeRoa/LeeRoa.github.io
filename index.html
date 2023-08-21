@@ -16,6 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://kit.fontawesome.com/e49f385ff0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,52 +27,266 @@
             </div>
             <div>Hand made</div>
         </div>
-        <div id="home-btn">
-            <div>
+        <div id="home_btn" class="side_bar_btn side_bar_selected" data-num="1" onclick="sideBarClickEvent(this)">
+            <div class="side_bar_icon_div">
                 <span id="profile_icon" class="side_bar_icon material-symbols-outlined">home</span>
             </div>
             <div class="korean side_bar_titles">홈</div>       
         </div>
-        <div id="profile_btn">
-            <div>
+        <div id="profile_btn" class="side_bar_btn" data-num="2" onclick="sideBarClickEvent(this)">
+            <div class="side_bar_icon_div">
                 <span id="profile_icon" class="side_bar_icon material-symbols-outlined">person</span>
             </div>
             <div class="korean side_bar_titles">프로필</div>                        
         </div>
-        <div id="skill_btn">
-            <div>
+        <div id="skill_btn" class="side_bar_btn" data-num="3" onclick="sideBarClickEvent(this)">
+            <div class="side_bar_icon_div">
                 <span id="skill_icon" class="side_bar_icon material-symbols-outlined">task_alt</span>
             </div>
             <div class="korean side_bar_titles">스킬</div>                   
         </div>
-        <div id="project_btn">
-            <div>
+        <div id="project_btn" class="side_bar_btn" data-num="4" onclick="sideBarClickEvent(this)">
+            <div class="side_bar_icon_div">
                 <span id="project_icon" class="side_bar_icon material-symbols-outlined">lightbulb</span>
             </div>
             <div class="korean side_bar_titles">프로젝트</div>        
         </div>
-        <div id="archive_btn">
-            <div>
+        <div id="archive_btn" class="side_bar_btn" data-num="5" onclick="sideBarClickEvent(this)">
+            <div class="side_bar_icon_div">
                 <span id="archive_icon" class="side_bar_icon material-symbols-outlined">box</span>
             </div>
             <div class="korean side_bar_titles">지식상자</div>        
         </div>
-        <div id="contact_btn">
-            <div>
+        <div id="contact_btn" class="side_bar_btn" data-num="6" onclick="sideBarClickEvent(this)">
+            <div class="side_bar_icon_div">
                 <span id="contact_icon" class="side_bar_icon material-symbols-outlined">call</span>
             </div>
             <div class="korean side_bar_titles">문의</div> 
         </div>
     </div>
-    
+    <div></div>
     <main id="index_main">
-        
+        <div class="main_content_div" id="content_1">
+            <div class="main_top">
+                <div class="main_top_profile_div">
+                    <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
+                </div>
+                <div class="main_top_content_div">
+                    <div class="main_top_content_title">About Me</div>
+                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                </div>
+                <div class="main_top_others_div">
+                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                </div>
+            </div>
+            <div class="main_mid">
+
+            </div>
+            <div class="main_bottom">
+                <div class="main_bottom_like_div">
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
+                    </div>
+                </div>
+                <div class="main_bottom_comment_div">
+                    <div class="comment_div">
+                        <div class="user_name">LeeRoa</div>
+                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_content_div" id="content_2">
+            <div class="main_top">
+                <div class="main_top_profile_div">
+                    <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
+                </div>
+                <div class="main_top_content_div">
+                    <div class="main_top_content_title">About Me</div>
+                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                </div>
+                <div class="main_top_others_div">
+                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                </div>
+            </div>
+            <div class="main_mid">
+
+            </div>
+            <div class="main_bottom">
+                <div class="main_bottom_like_div">
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
+                    </div>
+                </div>
+                <div class="main_bottom_comment_div">
+                    <div class="comment_div">
+                        <div class="user_name">LeeRoa</div>
+                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_content_div" id="content_3">
+            <div class="main_top">
+                <div class="main_top_profile_div">
+                    <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
+                </div>
+                <div class="main_top_content_div">
+                    <div class="main_top_content_title">About Me</div>
+                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                </div>
+                <div class="main_top_others_div">
+                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                </div>
+            </div>
+            <div class="main_mid">
+
+            </div>
+            <div class="main_bottom">
+                <div class="main_bottom_like_div">
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
+                    </div>
+                </div>
+                <div class="main_bottom_comment_div">
+                    <div class="comment_div">
+                        <div class="user_name">LeeRoa</div>
+                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_content_div" id="content_4">
+            <div class="main_top">
+                <div class="main_top_profile_div">
+                    <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
+                </div>
+                <div class="main_top_content_div">
+                    <div class="main_top_content_title">About Me</div>
+                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                </div>
+                <div class="main_top_others_div">
+                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                </div>
+            </div>
+            <div class="main_mid">
+
+            </div>
+            <div class="main_bottom">
+                <div class="main_bottom_like_div">
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
+                    </div>
+                </div>
+                <div class="main_bottom_comment_div">
+                    <div class="comment_div">
+                        <div class="user_name">LeeRoa</div>
+                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_content_div" id="content_5">
+            <div class="main_top">
+                <div class="main_top_profile_div">
+                    <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
+                </div>
+                <div class="main_top_content_div">
+                    <div class="main_top_content_title">About Me</div>
+                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                </div>
+                <div class="main_top_others_div">
+                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                </div>
+            </div>
+            <div class="main_mid">
+
+            </div>
+            <div class="main_bottom">
+                <div class="main_bottom_like_div">
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
+                    </div>
+                </div>
+                <div class="main_bottom_comment_div">
+                    <div class="comment_div">
+                        <div class="user_name">LeeRoa</div>
+                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_content_div" id="content_6">
+            <div class="main_top">
+                <div class="main_top_profile_div">
+                    <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
+                </div>
+                <div class="main_top_content_div">
+                    <div class="main_top_content_title">About Me</div>
+                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                </div>
+                <div class="main_top_others_div">
+                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                </div>
+            </div>
+            <div class="main_mid">
+
+            </div>
+            <div class="main_bottom">
+                <div class="main_bottom_like_div">
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
+                    </div>
+                </div>
+                <div class="main_bottom_comment_div">
+                    <div class="comment_div">
+                        <div class="user_name">LeeRoa</div>
+                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <div></div>
+
     <footer id="footer">
-        <div id="user_profile_div">
-            
-        </div>
         <div id="commend_title" class="korean">회원님을 위한 추천</div>   
         <div id="commend_list">   
             <div id="git_hub_div" class="commend_div">
