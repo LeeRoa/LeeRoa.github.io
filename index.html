@@ -16,10 +16,14 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://kit.fontawesome.com/e49f385ff0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
+    <div class="notification-container" id="notification-container">
+        <p class="korean">URL이 클립보드에 복사되었습니다.</p>
+    </div>
+
     <div id="side_bar_left">
         <div id="logo_btn">
             <div>
@@ -72,14 +76,14 @@
                     <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
                 </div>
                 <div class="main_top_content_div">
-                    <div class="main_top_content_title">About Me</div>
-                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                    <div class="main_top_content_title">Home</div>
+                    <div class="main_top_content_small_content korean">안녕하세요! 신입 개발자 이로아입니다.</div>
                 </div>
                 <div class="main_top_others_div">
-                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                    <span id="others_btn_1" class="material-symbols-outlined main_top_others_btn">more_horiz</span>
                 </div>
             </div>
-            <div class="main_mid">
+            <div class="main_mid" id="main_mid_1">
 
             </div>
             <div class="main_bottom">
@@ -91,6 +95,7 @@
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
                     </div>
                     <div>
+                        <input type="hidden" name="link" class="web_link" value="https://leeroa.github.io/">
                         <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
                     </div>
                 </div>
@@ -109,14 +114,42 @@
                 </div>
                 <div class="main_top_content_div">
                     <div class="main_top_content_title">About Me</div>
-                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                    <div class="main_top_content_small_content korean">개발을 사랑하고 즐기는 개발자입니다.</div>
                 </div>
                 <div class="main_top_others_div">
-                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                    <span id="others_btn_2"  class="material-symbols-outlined main_top_others_btn">more_horiz</span>
                 </div>
             </div>
-            <div class="main_mid">
-
+            <div class="main_mid" id="main_mid_2">
+                <div id="profile_img_div">
+                    <img id="profile_img" src="css/assets/profile_img_1.jpg" alt="">
+                </div>
+                <div id="profile_content_div">
+                    <div class="profile_content_detail">
+                        <div class="korean profile_content_title">이름 : </div>                        
+                        <div class="korean profile_content_con">이로아</div>                        
+                    </div>
+                    <div class="profile_content_detail">
+                        <div class="korean profile_content_title">휴대폰 : </div>
+                        <div class="korean profile_content_con">010 2725 7717</div>
+                    </div>
+                    <div class="profile_content_detail">
+                        <div class="korean profile_content_title">생년월일 : </div>
+                        <div class="korean profile_content_con">2000. 09. 14 (만 22세)</div>
+                    </div>
+                    <div class="profile_content_detail">
+                        <div class="korean profile_content_title">주소 : </div>
+                        <div class="korean profile_content_con">경기도 남양주시 금곡동</div>
+                    </div>
+                    <div class="profile_content_detail">
+                        <div class="korean profile_content_title">학력 : </div>
+                        <div class="korean profile_content_con">경복대학교 뷰티매니저과</div>
+                    </div>
+                    <div class="profile_content_detail">
+                        <div class="korean profile_content_title">수료 내역 : </div>
+                        <div class="korean profile_content_con">2023. 02 - 2023. 09 이젠 아카데미 구리</div>
+                    </div>
+                </div>
             </div>
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
@@ -127,13 +160,19 @@
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
                     </div>
                     <div>
+                        <input type="hidden" name="link" class="web_link" value="https://leeroa.github.io/">
                         <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
                     </div>
                 </div>
                 <div class="main_bottom_comment_div">
                     <div class="comment_div">
                         <div class="user_name">LeeRoa</div>
-                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                        <div class="user_comment korean">
+                            안녕하세요, 자바를 활용한 웹 개발 분야를 끊임없이 공부하는 신입 개발자 이로아입니다. <br>
+                            저는 문제 해결에 대한 진득한 열정을 가지고 있습니다.<br>
+                            또한, 머릿속으로 상상했던 로직을 즉흥적으로 코딩하며 구현하는 것을 좋아하고,<br>
+                            팀 프로젝트를 진행하며 좋은 결과를 만들어내기 위해 꾸준히 노력하는 스타일입니다.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,15 +183,111 @@
                     <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
                 </div>
                 <div class="main_top_content_div">
-                    <div class="main_top_content_title">About Me</div>
-                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                    <div class="main_top_content_title">Skills</div>
+                    <div class="main_top_content_small_content korean">제가 할 수 있는 것은 ...</div>
                 </div>
                 <div class="main_top_others_div">
-                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                    <span id="others_btn_3" class="material-symbols-outlined main_top_others_btn">more_horiz</span>
                 </div>
             </div>
-            <div class="main_mid">
-
+            <div class="main_mid view_1" id="main_mid_3">
+                <span class="material-symbols-outlined prev_btn" id="skill_prev_btn">expand_circle_right</span>
+                <span class="material-symbols-outlined next_btn" id="skill_next_btn">expand_circle_right</span>
+                <div class="skills_div display_show" id="front_end_div">
+                    <div class="skills_div_title">Front End</div>
+                    <div class="skills_content_div" id="front_content">
+                        <div id="skill_html" class="skill_detail_div">
+                            <div>HTML/CSS</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="html_css_skill_percent" class="skill_percent skill_front_percent">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skill_javascript" class="skill_detail_div">
+                            <div>JAVASCRIPT</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="js_skill_percent" class="skill_percent skill_front_percent">65%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skill_jsp" class="skill_detail_div">
+                            <div>JSP</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="jsp_skill_percent" class="skill_percent skill_front_percent">75%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skill_jquery" class="skill_detail_div">
+                            <div>JQUERY</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="jquery_skill_percent" class="skill_percent skill_front_percent">75%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_div display_none" id="back_end_div">
+                    <div class="skills_div_title" id="back_end_title">Back End</div>
+                    <div class="skills_content_div" id="back_content">
+                        <div id="skill_spring" class="skill_detail_div">
+                            <div>SPRING</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="spring_skill_percent" class="skill_percent skill_back_percent">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skill_java" class="skill_detail_div">
+                            <div>JAVA</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="java_skill_percent" class="skill_percent skill_back_percent">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skill_oracle" class="skill_detail_div">
+                            <div>ORACLE</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="oracle_skill_percent" class="skill_percent skill_back_percent">75%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_div display_none" id="other_div">
+                    <div class="skills_div_title" id="other_title">Others</div>
+                    <div class="skills_content_div" id="other_content">
+                        <div id="skill_git" class="skill_detail_div">
+                            <div>GIT BASH</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="git_skill_percent" class="skill_percent skill_other_percent">75%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skill_github" class="skill_detail_div">
+                            <div>GIT HUB</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="github_skill_percent" class="skill_percent skill_other_percent">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skill_figma" class="skill_detail_div">
+                            <div>FIGMA</div>
+                            <div>
+                                <div class="skill_bar">
+                                    <div id="figma_skill_percent" class="skill_percent skill_other_percent">60%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
@@ -163,13 +298,14 @@
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
                     </div>
                     <div>
+                        <input type="hidden" name="link" class="web_link" value="https://leeroa.github.io/">
                         <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
                     </div>
                 </div>
                 <div class="main_bottom_comment_div">
                     <div class="comment_div">
                         <div class="user_name">LeeRoa</div>
-                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                        <div class="user_comment">My Skills</div>
                     </div>
                 </div>
             </div>
@@ -180,14 +316,14 @@
                     <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
                 </div>
                 <div class="main_top_content_div">
-                    <div class="main_top_content_title">About Me</div>
-                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                    <div class="main_top_content_title">Project</div>
+                    <div class="main_top_content_small_content korean">제가 구현했던 프로젝트들입니다.</div>
                 </div>
                 <div class="main_top_others_div">
-                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                    <span id="others_btn_4" class="material-symbols-outlined main_top_others_btn">more_horiz</span>
                 </div>
             </div>
-            <div class="main_mid">
+            <div class="main_mid" id="main_mid_4">
 
             </div>
             <div class="main_bottom">
@@ -199,6 +335,7 @@
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
                     </div>
                     <div>
+                        <input type="hidden" name="link" class="web_link" value="https://leeroa.github.io/">
                         <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
                     </div>
                 </div>
@@ -216,14 +353,14 @@
                     <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
                 </div>
                 <div class="main_top_content_div">
-                    <div class="main_top_content_title">About Me</div>
-                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                    <div class="main_top_content_title">Archive Box</div>
+                    <div class="main_top_content_small_content korean">직접 공부하며 기록한 지식들입니다.</div>
                 </div>
                 <div class="main_top_others_div">
-                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                    <span id="others_btn_5" class="material-symbols-outlined main_top_others_btn">more_horiz</span>
                 </div>
             </div>
-            <div class="main_mid">
+            <div class="main_mid" id="main_mid_5">
 
             </div>
             <div class="main_bottom">
@@ -235,6 +372,7 @@
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
                     </div>
                     <div>
+                        <input type="hidden" name="link" class="web_link" value="https://leeroa.github.io/">
                         <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
                     </div>
                 </div>
@@ -252,14 +390,14 @@
                     <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
                 </div>
                 <div class="main_top_content_div">
-                    <div class="main_top_content_title">About Me</div>
-                    <div class="main_top_content_small_content korean">안녕하세요! 저는 이로아입니다.</div>
+                    <div class="main_top_content_title">Contact</div>
+                    <div class="main_top_content_small_content korean">최선을 다하겠습니다.</div>
                 </div>
                 <div class="main_top_others_div">
-                    <span class="material-symbols-outlined main_top_others_btn">more_horiz</span>
+                    <span id="others_btn_6" class="material-symbols-outlined main_top_others_btn">more_horiz</span>
                 </div>
             </div>
-            <div class="main_mid">
+            <div class="main_mid" id="main_mid_6">
 
             </div>
             <div class="main_bottom">
@@ -271,6 +409,7 @@
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
                     </div>
                     <div>
+                        <input type="hidden" name="link" class="web_link" value="https://leeroa.github.io/">
                         <span class="material-symbols-outlined like_btns content_bookmark_btn">bookmark</span>
                     </div>
                 </div>

@@ -1,9 +1,21 @@
 // side bar active
 const sideBtns = $('.side_bar_btn'); // side bar btn array
+const scrollArr = [0, $('#content_2').offset().top, $('#content_3').offset().top, $('#content_4').offset().top, $('#content_5').offset().top, $('#content_6').offset().top];
+const scrollSpead = 800;
+var html = $("html");
+var page = 1;
+const skill_front_percent = $('.skill_front_percent');
+const skill_back_percent = $('.skill_back_percent');
+const skill_other_percent = $('.skill_other_percent');
+const skill_front_percent_num = [90, 65, 75, 75];
+const skill_back_percent_num = [70, 90, 75];
+const skill_other_percent_num = [75, 70, 60];
+
+html.animate({ scrollTop: 0 });
 
 function sideBarClickEvent(btn) {
     if (!$(btn).hasClass('side_bar_selected')) {
-        
+
         sideBtns.each(function (index) {
             $(sideBtns[index]).removeClass('side_bar_selected');
         });
@@ -11,17 +23,175 @@ function sideBarClickEvent(btn) {
         $(btn).addClass('side_bar_selected');
 
     }
-    if ($(btn).data('num') == 1) {
-        $('html').animate({scrollTop : 0}, 500);
-    } else if ($(btn).data('num') == 2) {
-        $('html').animate({scrollTop : 1347}, 500);
-    } else if ($(btn).data('num') == 3) {
-        $('html').animate({scrollTop : 2693}, 500);
-    } else if ($(btn).data('num') == 4) {
-        $('html').animate({scrollTop : 4029}, 500);
-    } else if ($(btn).data('num') == 5) {
-        $('html').animate({scrollTop : 5391}, 500);
-    } else if ($(btn).data('num') == 6) {
-        $('html').animate({scrollTop : 6748}, 500);
+    var index = $(btn).data('num') - 1;
+    html.animate({ scrollTop: scrollArr[index] - 100 }, scrollSpead);
+    page = $(btn).data('num');
+    
+    if (page == 3) {
+        skill_front_percent.each(function (index) {
+            $(skill_front_percent[index]).css('width', `${skill_front_percent_num[index]}%`);
+        });
     }
 }
+
+$(window).scroll(function () {
+    var scrollValue = $(document).scrollTop();
+
+    if (scrollValue == 0) {
+        sideBtns.each(function (index) {
+            $(sideBtns[index]).removeClass('side_bar_selected');
+        });
+
+        $(sideBtns[0]).addClass('side_bar_selected');
+    }
+
+    if (scrollValue > scrollArr[0] && scrollValue <= scrollArr[1]) {
+        sideBtns.each(function (index) {
+            $(sideBtns[index]).removeClass('side_bar_selected');
+        });
+
+        $(sideBtns[1]).addClass('side_bar_selected');
+    } else if (scrollValue > scrollArr[1] && scrollValue <= scrollArr[2]) {
+        sideBtns.each(function (index) {
+            $(sideBtns[index]).removeClass('side_bar_selected');
+        });
+        if (scrollValue >= scrollArr[1] + 200) {
+            skill_front_percent.each(function (index) {
+                $(skill_front_percent[index]).css('width', `${skill_front_percent_num[index]}%`);
+            });
+        }
+        $(sideBtns[2]).addClass('side_bar_selected');
+    } else if (scrollValue > scrollArr[2] && scrollValue <= scrollArr[3]) {
+        sideBtns.each(function (index) {
+            $(sideBtns[index]).removeClass('side_bar_selected');
+        });
+        
+        $(sideBtns[3]).addClass('side_bar_selected');
+    } else if (scrollValue > scrollArr[3] && scrollValue <= scrollArr[4]) {
+        sideBtns.each(function (index) {
+            $(sideBtns[index]).removeClass('side_bar_selected');
+        });
+
+        $(sideBtns[4]).addClass('side_bar_selected');
+    } else if (scrollValue > scrollArr[4] && scrollValue < scrollArr[5]) {
+        sideBtns.each(function (index) {
+            $(sideBtns[index]).removeClass('side_bar_selected');
+        });
+
+        $(sideBtns[5]).addClass('side_bar_selected');
+    } else if (scrollValue > scrollArr[5]) {
+        sideBtns.each(function (index) {
+            $(sideBtns[index]).removeClass('side_bar_selected');
+        });
+
+        $(sideBtns[6]).addClass('side_bar_selected');
+    }
+});
+
+// bookmark btn copy active
+const notification = $('#notification-container');
+
+notification.addClass('hide');
+
+// Show notification
+const showNotification = () => {
+    console.log('1');
+    notification.addClass('show');
+    notification.removeClass('hide');
+    setTimeout(() => {
+        console.log('왔다.');
+        notification.removeClass('show');
+        notification.addClass('hide');
+    }, 2000)
+  }
+  $(document).ready(function() {
+    $(".content_bookmark_btn").click(function() {
+        var textToCopy = $(".web_link").val(); // 복사할 텍스트를 가져옵니다.
+        // Clipboard API를 사용하여 텍스트를 클립보드에 복사합니다.
+        navigator.clipboard.writeText(textToCopy)
+            .then(function(e) {
+                    //we want only letters that are not already pressed
+                    showNotification();
+                  }
+            )
+            .catch(function(error) {
+                alert("클립보드 복사 중 오류가 발생했습니다.");
+                console.error(error);
+            });
+    });
+});
+
+const prevBtn = $('#skill_prev_btn');
+const nextBtn = $('#skill_next_btn');
+const skillContent = $('#main_mid_3');
+
+const skillsDivs = $('.skills_div');
+const frontDiv = $('#front_end_div');
+const backDiv = $('#back_end_div');
+const otherDiv = $('#other_div');
+
+// 콘텐츠 prev, next btn active
+const skillsDiv = $('.skills_div');
+
+console.log(skillsDiv);
+
+prevBtn.click(function (e) {
+    if (skillContent.hasClass('view_1')) {
+        return;
+    } else if (skillContent.hasClass('view_2')) {
+        skillsDivs.each(function (index) {
+            $(skillsDivs[index]).removeClass('display_show');
+            $(skillsDivs[index]).addClass('display_none');
+        });
+        skill_front_percent.each(function (index) {
+            $(skill_front_percent[index]).css('width', `${skill_front_percent_num[index]}%`);
+        });
+        frontDiv.removeClass('display_none');
+        frontDiv.addClass('display_show');
+        skillContent.removeClass('view_2');
+        skillContent.addClass('view_1');
+    } else if (skillContent.hasClass('view_3')) {
+        skillsDivs.each(function (index) {
+            $(skillsDivs[index]).removeClass('display_show');
+            $(skillsDivs[index]).addClass('display_none');
+        });
+        skill_back_percent.each(function (index) {
+            $(skill_back_percent[index]).css('width', `${skill_back_percent_num[index]}%`);
+        });
+        backDiv.removeClass('display_none');
+        backDiv.addClass('display_show');
+        skillContent.removeClass('view_3');
+        skillContent.addClass('view_2');
+    }
+});
+
+nextBtn.click(function (e) {
+    if (skillContent.hasClass('view_1')) {
+        skillsDivs.each(function (index) {
+            $(skillsDivs[index]).removeClass('display_show');
+            $(skillsDivs[index]).addClass('display_none');
+        });
+
+        backDiv.removeClass('display_none');
+        backDiv.addClass('display_show');
+        skill_back_percent.each(function (index) {
+            $(skill_back_percent[index]).css('width', `${skill_back_percent_num[index]}%`);
+        });
+        skillContent.removeClass('view_1');
+        skillContent.addClass('view_2');
+        
+    } else if (skillContent.hasClass('view_2')) {
+        skillsDivs.each(function (index) {
+            $(skillsDivs[index]).removeClass('display_show');
+            $(skillsDivs[index]).addClass('display_none');
+        });
+
+        otherDiv.removeClass('display_none');
+        otherDiv.addClass('display_show');
+        skill_back_percent.each(function (index) {
+            $(skill_other_percent[index]).css('width', `${skill_other_percent_num[index]}%`);
+        });
+        skillContent.removeClass('view_2');
+        skillContent.addClass('view_3');
+    }
+});
