@@ -1,4 +1,5 @@
 // side bar active
+const logoBtn = $('#logo_btn');
 const sideBtns = $('.side_bar_btn'); // side bar btn array
 const scrollArr = [0, $('#content_2').offset().top, $('#content_3').offset().top, $('#content_4').offset().top, $('#content_5').offset().top, $('#content_6').offset().top];
 const scrollSpead = 800;
@@ -10,6 +11,10 @@ const skill_other_percent = $('.skill_other_percent');
 const skill_front_percent_num = [90, 65, 75, 75];
 const skill_back_percent_num = [70, 90, 75];
 const skill_other_percent_num = [75, 70, 60];
+
+logoBtn.click(function (e) {
+    html.animate({ scrollTop: 0}, scrollSpead);
+});
 
 function sideBarClickEvent(btn) {
     if (!$(btn).hasClass('side_bar_selected')) {
@@ -93,11 +98,9 @@ notification.addClass('hide');
 
 // Show notification
 const showNotification = () => {
-    console.log('1');
     notification.addClass('show');
     notification.removeClass('hide');
     setTimeout(() => {
-        console.log('왔다.');
         notification.removeClass('show');
         notification.addClass('hide');
     }, 2000)
