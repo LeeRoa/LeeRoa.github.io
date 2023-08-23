@@ -11,8 +11,6 @@ const skill_front_percent_num = [90, 65, 75, 75];
 const skill_back_percent_num = [70, 90, 75];
 const skill_other_percent_num = [75, 70, 60];
 
-html.animate({ scrollTop: 0 });
-
 function sideBarClickEvent(btn) {
     if (!$(btn).hasClass('side_bar_selected')) {
 
