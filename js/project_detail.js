@@ -1,12 +1,14 @@
 // side bar active
 const logoBtn = $('#logo_btn');
 const sideBtns = $('.side_bar_btn'); // side bar btn array
-const scrollArr = [0, $('#detail_2').offset().top];
+const scrollArr = [0, $('#detail_2').offset().top, $('#detail_3').offset().top, $('#detail_4').offset().top, $('#detail_5').offset().top, $('#detail_6').offset().top];
 const scrollSpead = 800;
 var html = $("html");
 var page = 1;
 
-console.log($('#detail_2').offset().top);
+logoBtn.click(function (e) {
+    html.animate({ scrollTop: 0}, scrollSpead);
+});
 
 function sideBarClickEvent(btn) {
     if (!$(btn).hasClass('side_bar_selected')) {

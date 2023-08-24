@@ -51,6 +51,7 @@ body {
 
 #back_btn {
     margin-top: 100px;
+    color: black;
 }
 
 #logo_btn {
@@ -219,10 +220,10 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
+    row-gap: 40px;
 }
 
 .res_img {
-    background-image: url(/css/assets/smg_main.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -230,7 +231,79 @@ main {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-#res_caption_1 {
+#res_img_1 {
+    background-image: url(/css/assets/smg/find_pw.png);
+}
+
+#res_img_2 {
+    background-image: url(/css/assets/smg/temp_pw_email.png);
+}
+
+#res_img_3 {
+    background-image: url(/css/assets/smg/game_detail_top.png);
+}
+
+#res_img_4 {
+    background-image: url(/css/assets/smg/review_default.png);
+}
+
+#res_img_5 {
+    background-image: url(/css/assets/smg/review_main.png);
+}
+
+#res_img_6 {
+    background-image: url(/css/assets/smg/notice_list.png);
+}
+
+#res_img_7 {
+    background-image: url(/css/assets/smg/admin_notice_list.png);
+}
+
+#res_img_8 {
+    background-image: url(/css/assets/smg/admin_notice_add.png);
+}
+
+#res_img_9 {
+    background-image: url(/css/assets/smg/admin_notice_update.png);
+}
+
+#res_img_10 {
+    background-image: url(/css/assets/smg/admin_notice_delete.png);
+}
+
+#res_img_11 {
+    background-image: url(/css/assets/smg/cart_none.png);
+}
+
+#res_img_12 {
+    background-image: url(/css/assets/smg/cart.png);
+}
+
+#res_img_13 {
+    background-image: url(/css/assets/smg/cart_simple.png);
+}
+
+#res_img_14 {
+    background-image: url(/css/assets/smg/platform_select.png);
+}
+
+#res_img_15 {
+    background-image: url(/css/assets/smg/checkout_form.png);
+}
+
+#res_img_16 {
+    background-image: url(/css/assets/smg/point_use.png);
+}
+
+#res_img_17 {
+    background-image: url(/css/assets/smg/cart_info.png);
+}
+
+#res_img_18 {
+    background-image: url(/css/assets/smg/checkout_info.png);
+}
+
+.res_caption {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
@@ -238,4 +311,23 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+}
+
+.res_simple_list {
+    margin-bottom: 50px;
+    color: #3f3f3f;
+    font-size: 14px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+.font_bold {
+    font-weight: 900;
+}
+
+.res_simple_div {
+    display: grid;
+    grid-template-columns: 100%;
 }
