@@ -303,6 +303,14 @@ main {
     background-image: url(/css/assets/smg/checkout_info.png);
 }
 
+#res_img_19 {
+    background-image: url(/css/assets/smg/port_one.png);
+}
+
+#res_img_20 {
+    background-image: url(/css/assets/smg/orderfin.png);
+}
+
 .res_caption {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
