@@ -146,6 +146,7 @@ main {
 .project_logo_img {
     width: 200px;
     height: auto;
+    border-radius: 8px;
 }
 
 .project_title > :first-child {
