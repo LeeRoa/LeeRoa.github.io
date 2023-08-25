@@ -289,3 +289,40 @@ thinkNextBtn.click(function (e) {
         thinkDiv.css('transform', `translate(${pageTran[1]}px)`);
     }
 });
+
+const likeBtn = $('.like_btns');
+const FullLikeBtn = $('.push_like');
+
+FullLikeBtn.hide();
+
+$(likeBtn).click(function(e) {
+    console.log(e.target);
+    const num = $(e.target).data('like') - 1;
+    $(FullLikeBtn[num]).toggle();
+});
+
+// share like
+$('.content_share_btn').click(function () {
+    sharePage();
+});
+
+function sharePage() {
+    const shareObject = {
+      title: '이로아의 포트폴리오 웹사이트',
+      text: '이로아의 포트폴리오 웹사이트',
+      url: 'https://leeroa.github.io/',
+    };
+  
+    if (navigator.share) { // Navigator를 지원하는 경우만 실행
+      navigator
+        .share(shareObject)
+        .then(() => {
+          // 정상 동작할 경우 실행
+        })
+        .catch((error) => {
+          alert('에러가 발생했습니다.')
+        })
+    } else { // navigator를 지원하지 않는 경우
+      alert('페이지 공유를 지원하지 않습니다.')
+    }
+  }

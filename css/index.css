@@ -676,6 +676,20 @@ body {
     row-gap: 10px;
 }
 
+.like_active_div {
+    position: relative;
+}
+
+.push_like {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: #ff5068;
+    position: absolute;
+}
+
 #contact_div > * {
     text-align: center;
 }
