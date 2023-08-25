@@ -40,6 +40,10 @@ body {
     opacity: 1;
 }
 
+#phone_num {
+    cursor: pointer;
+}
+
 /* side bar css */
 .side_bar_icon {
     font-variation-settings:
@@ -136,7 +140,7 @@ body {
 }
 
 .user_comment {
-    font-size: 12px;
+    font-size: 13px;
     display: flex;
     align-items: center;
 }
@@ -159,6 +163,7 @@ body {
 
 #content_5 {
     height: 750px;
+    overflow: hidden;
 }
 
 #content_6 {
@@ -168,6 +173,27 @@ body {
 .main_top {
     display: grid;
     grid-template-columns: 100px 1fr 100px;
+}
+
+
+#main_mid_1 {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/css/assets/me_intro.webp);
+    background-size: cover;
+}
+
+#main_mid_1 > :first-child {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+#main_mid_1 > :nth-child(2) {
+    font-size: 20px;
 }
 
 .main_top_profile_div {
@@ -459,8 +485,17 @@ body {
 
 .prev_btn, .next_btn {
     position: absolute;
-    color: #dddddd;
+    color: #0095F6;
     cursor: pointer;
+    z-index: 10;
+}
+
+#skill_prev_btn, #skill_next_btn {
+    font-size: 40px;
+}
+
+#think_prev_btn, #think_next_btn {
+    font-size: 40px;
 }
 
 .prev_btn:hover, .next_btn:hover {
@@ -468,7 +503,6 @@ body {
 }
 
 .prev_btn {
-    transform: rotate(180deg);
     left: 10px;
     top: 50%;
 }
@@ -545,6 +579,134 @@ body {
 .project_data {
     font-size: 12px;
     color: #6D6D6D;
+}
+
+#main_mid_5 {
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+#think_me_grid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(6, 280px);
+    column-gap: 20px;
+    transition: 0.6s;
+}
+
+.go_right {
+    transform: translate(-300px);
+}
+
+.go_left {
+    transform: translate(300px);
+}
+
+.think_div {
+    display: grid;
+    grid-template-rows: 20px 1fr 100px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 40px;
+    row-gap: 20px;
+}
+
+.person_name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.person_comment {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.person_img {
+    padding: 10px;
+}
+
+.think_div > :last-child{
+    width: 100%;
+    height: 100%;
+}
+
+.person_img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: #1b2750 5px solid;
+}
+
+#person_img_1 {
+    background-image: url(/css/assets/friend/siyeon.png);
+}
+
+#person_img_2 {
+    background-image: url(/css/assets/friend/T.png);
+}
+
+#person_img_3 {
+    background-image: url(/css/assets/friend/y.png);
+}
+
+#person_img_4 {
+    background-image: url(/css/assets/friend/jinhwa.png);
+}
+
+#person_img_5 {
+    background-image: url(/css/assets/friend/shj.png);
+}
+
+#main_mid_6 {
+    padding: 40px 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 100px;
+}
+
+#contact_div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#contact_div > * {
+    text-align: center;
+}
+
+#contact_div > :first-child {
+    font-size: 18px;
+    color: #6D6D6D;
+}
+
+#contact_div > :nth-child(2) {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+#contact_div > :nth-child(3) {
+    font-size: 18px;
+    color: #6D6D6D;
+}
+
+#contact_div > :nth-child(4) {
+    font-size: 20px;
+    font-weight: 600;
+    color:#1b2750;
+    cursor: pointer;
+}
+
+#me_img {
+    background-image: url(/css/assets/roa.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 /* footer css */

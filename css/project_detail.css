@@ -340,3 +340,23 @@ main {
     display: grid;
     grid-template-columns: 100%;
 }
+
+#kiosk_img_1 {
+    background-image: url(/css/assets/kiosk/seat_pop.png);
+}
+
+#kiosk_img_2 {
+    background-image: url(/css/assets/kiosk/checkout_pop.png);
+}
+
+#kiosk_img_3 {
+    background-image: url(/css/assets/kiosk/seat_change.png);
+}
+
+#kiosk_img_4 {
+    background-image: url(/css/assets/kiosk/studyroom.png);
+}
+
+#kiosk_img_5 {
+    background-image: url(/css/assets/kiosk/studyroom_2.png);
+}
