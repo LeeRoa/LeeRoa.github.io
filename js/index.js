@@ -254,7 +254,7 @@ nextBtn.click(function (e) {
 const thinkDiv = $('#think_me_grid');
 const thinkPrevBtn = $('#think_prev_btn');
 const thinkNextBtn = $('#think_next_btn');
-const pageTran = [0, -300, -600, -900];
+const pageTran = [0, -300, -600, -900, -1200];
 
 if (thinkDiv.hasClass('page_1')) {
     thinkPrevBtn.hide();
@@ -272,6 +272,11 @@ thinkPrevBtn.click(function (e) {
         thinkDiv.addClass('page_2');
         thinkNextBtn.show();
         thinkDiv.css('transform', `translate(${pageTran[1]}px)`);
+    } else if (thinkDiv.hasClass('page_4')) {
+        thinkDiv.removeClass('page_4');
+        thinkDiv.addClass('page_3');
+        thinkNextBtn.show();
+        thinkDiv.css('transform', `translate(${pageTran[2]}px)`);
     }
 });
 
@@ -279,7 +284,6 @@ thinkNextBtn.click(function (e) {
     if (thinkDiv.hasClass('page_2')) {
         thinkDiv.removeClass('page_2');
         thinkDiv.addClass('page_3');
-        thinkNextBtn.hide();
         thinkPrevBtn.show();
         thinkDiv.css('transform', `translate(${pageTran[2]}px)`);
     } else if (thinkDiv.hasClass('page_1')) {
@@ -287,6 +291,12 @@ thinkNextBtn.click(function (e) {
         thinkDiv.addClass('page_2');
         thinkPrevBtn.show();
         thinkDiv.css('transform', `translate(${pageTran[1]}px)`);
+    } else if (thinkDiv.hasClass('page_3')) {
+        thinkDiv.removeClass('page_3');
+        thinkDiv.addClass('page_4');
+        thinkNextBtn.show();
+        thinkNextBtn.hide();
+        thinkDiv.css('transform', `translate(${pageTran[3]}px)`);
     }
 });
 
