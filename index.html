@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이로아</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/css/assets/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/css/assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/css/assets/fav/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
@@ -22,6 +27,14 @@
 <body>
     <div class="notification-container" id="notification-container">
         <p class="korean">URL이 클립보드에 복사되었습니다.</p>
+    </div>
+
+    <div class="notification-container" id="email-container">
+        <p class="korean">E-Mail이 클립보드에 복사되었습니다.</p>
+    </div>
+    
+    <div class="notification-container" id="phone-container">
+        <p class="korean">연락처가 클립보드에 복사되었습니다.</p>
     </div>
 
     <div id="side_bar_left">
@@ -57,9 +70,9 @@
         </div>
         <div id="archive_btn" class="side_bar_btn" data-num="5" onclick="sideBarClickEvent(this)">
             <div class="side_bar_icon_div">
-                <span id="archive_icon" class="side_bar_icon material-symbols-outlined">box</span>
+                <span id="archive_icon" class="side_bar_icon material-symbols-outlined">psychology_alt</span>
             </div>
-            <div class="korean side_bar_titles">지식상자</div>        
+            <div class="korean side_bar_titles">주변 사람들이 생각하는 나</div>        
         </div>
         <div id="contact_btn" class="side_bar_btn" data-num="6" onclick="sideBarClickEvent(this)">
             <div class="side_bar_icon_div">
@@ -84,12 +97,21 @@
                 </div>
             </div>
             <div class="main_mid" id="main_mid_1">
-
+                <div>
+                    LEE<br>
+                    ROA<br>
+                    PORTFOLIO<br>
+                </div>
+                <div class="korean">
+                    "안녕하세요. 신입 개발자 이로아의<br>
+                    개인 포트폴리오 사이트입니다."
+                </div>
             </div>
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
                     <div>
-                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn push_like like_1" data-like="1">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn like_1" data-like="1">favorite</span>
                     </div>
                     <div>
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
@@ -154,7 +176,8 @@
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
                     <div>
-                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn push_like like_2" data-like="2">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn like_2" data-like="2">favorite</span>
                     </div>
                     <div>
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
@@ -191,8 +214,8 @@
                 </div>
             </div>
             <div class="main_mid view_1" id="main_mid_3">
-                <span class="material-symbols-outlined prev_btn" id="skill_prev_btn">expand_circle_right</span>
-                <span class="material-symbols-outlined next_btn" id="skill_next_btn">expand_circle_right</span>
+                <span class="material-symbols-outlined prev_btn" id="skill_prev_btn">arrow_back_ios</span>
+                <span class="material-symbols-outlined next_btn" id="skill_next_btn">arrow_forward_ios</span>
                 <div class="skills_div display_show" id="front_end_div">
                     <div class="skills_div_title">Front End</div>
                     <div class="skills_content_div" id="front_content">
@@ -342,7 +365,8 @@
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
                     <div>
-                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn push_like like_3" data-like="3">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn like_3" data-like="3">favorite</span>
                     </div>
                     <div>
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
@@ -377,7 +401,7 @@
                 </div>
             </div>
             <div class="main_mid" id="main_mid_4">
-                <a href="project_detail_page/portfolio.html" class="project_div">
+                <!-- <a href="project_detail_page/portfolio.html" class="project_div">
                     <div class="project_banner">
                         <img class="project_banner_img" src="css/assets/portfolio_main.png" alt="">
                     </div>
@@ -386,7 +410,7 @@
                         <div class="project_content korean">개발 공부 기록 및 프로젝트들로 저를 소개할 수 있는 웹 사이트입니다.</div>
                         <div class="project_data korean">Dev. 2023. 08 - 진행중</div>
                     </div>
-                </a>
+                </a> -->
                 <a href="project_detail_page/smg.html" class="project_div">
                     <div class="project_banner">
                         <img class="project_banner_img" src="css/assets/smg_main.png" alt="">
@@ -411,7 +435,8 @@
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
                     <div>
-                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn push_like like_4" data-like="4">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn like_4" data-like="4">favorite</span>
                     </div>
                     <div>
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
@@ -435,20 +460,79 @@
                     <img class="main_top_profile_img" src="css/assets/content_profile.png" alt="">
                 </div>
                 <div class="main_top_content_div">
-                    <div class="main_top_content_title">Archive Box</div>
-                    <div class="main_top_content_small_content korean">직접 공부하며 기록한 지식들입니다.</div>
+                    <div class="main_top_content_title">Persona</div>
+                    <div class="main_top_content_small_content korean">주변 사람들은 저를 이렇게 생각해요.</div>
                 </div>
                 <div class="main_top_others_div">
                     <span id="others_btn_5" class="material-symbols-outlined main_top_others_btn">more_horiz</span>
                 </div>
             </div>
             <div class="main_mid" id="main_mid_5">
-                
+                <span class="material-symbols-outlined prev_btn" id="think_prev_btn">arrow_back_ios</span>
+                <span class="material-symbols-outlined next_btn" id="think_next_btn">arrow_forward_ios</span>
+                <div id="think_me_grid" class="page_1">
+                    <div class="think_div">
+                        <div class="person_name korean">이시연</div>
+                        <div class="person_comment korean">
+                            한 일에 몰두하면 집중력이 대단하고 업무 추진 능력이 매우 좋은 편, 사교성 또한 좋아서 개인 프로젝트도, 팀 프로젝트도 모두 잘 수행할 수 있는 사람, 더 나은 프로젝트 결과 도출을 위해 고민하며 오늘 밤을 새울 수 있는 사람!
+                        </div>
+                        <div>
+                            <div class="person_img" id="person_img_1"></div>
+                        </div>
+                    </div> 
+                    <div class="think_div">
+                        <div class="person_name korean">권혁준 쌤</div>
+                        <div class="person_comment korean">
+                            개발 공부를 진심으로 즐기는 학생이었습니다. 본인 할일은 하면서도 처지는 팀원들을 많이 도와주고 자상하게 챙기는 모습을 보여줬습니다. 팀 프로젝트를 성공적으로 마무리할 수 있었던 1등 공신이라고 생각합니다.
+                        </div>
+                        <div>
+                            <div class="person_img" id="person_img_2"></div>
+                        </div>
+                    </div> 
+                    <div class="think_div">
+                        <div class="person_name korean">양서열</div>
+                        <div class="person_comment korean">
+                            열정!열정!열정! 화끈한 성격을 바탕으로 주변인들을 이끌어가는 로아씨에 감화돼 열정적으로 코딩할 수 있는 환경이 조성되었다고 생각합니다!
+                        </div>
+                        <div>
+                            <div class="person_img" id="person_img_3"></div>
+                        </div>
+                    </div>                    
+                    <div class="think_div">
+                        <div class="person_name korean">김진화</div>
+                        <div class="person_comment korean">
+                            본인의 목표가 뚜렷하기에 그 목표를 달성하기 위해 집요하게 파고드는 성격을 갖고 있습니다. 개발자의 특성상 협업 또한 중요한데 성과를 위해서 진취적인 행동을 보여주는 능력과 밝은 에너지로 주변사람들까지 행복하게 해주는 능력까지 겸비하고 있습니다.
+                        </div>
+                        <div>
+                            <div class="person_img" id="person_img_4"></div>
+                        </div>
+                    </div>                    
+                    <div class="think_div">
+                        <div class="person_name korean">손재훈</div>
+                        <div class="person_comment korean">
+                            코딩하며 화도내고 웃기도하는 로아를 옆에서 보면 코딩에 참 진심인 거 같다는 생각이 든다 
+                            주변사람들을 편하게 해주는 특유의 친화력까지 가지고 있어서 앞으로의 모습이 참 기대되는 친구···.
+                        </div>
+                        <div>
+                            <div class="person_img" id="person_img_5"></div>
+                        </div>
+                    </div>
+                    <div class="think_div">
+                        <div class="person_name korean">홍기태</div>
+                        <div class="person_comment korean">
+                            항상 에너지로 가득차있는 에너자이저 같은 사람. 주위사람들에게도 에너지를 전파해서 없던 팀 에너지도 만들어줍니다. 파이팅의 화신!
+                        </div>
+                        <div>
+                            <div class="person_img" id="person_img_6"></div>
+                        </div>
+                    </div>                 
+                </div>
             </div>
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
                     <div>
-                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn push_like like_5" data-like="5">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn like_5" data-like="5">favorite</span>
                     </div>
                     <div>
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
@@ -461,7 +545,9 @@
                 <div class="main_bottom_comment_div">
                     <div class="comment_div">
                         <div class="user_name">LeeRoa</div>
-                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                        <div class="user_comment">
+                            말보다는 행동으로 먼저 보여드리겠습니다. 😁
+                        </div>
                     </div>
                 </div>
             </div>
@@ -480,12 +566,21 @@
                 </div>
             </div>
             <div class="main_mid" id="main_mid_6">
-
+                <div id="contact_div">
+                    <div class="korean">
+                        열정과 호기심을 가지고, 항상 새로운 것을 <br>배우려는 면모를 보이며 기술의 변화와 발전에 <br>능동적으로 대처하여 제 자신을 변함없이 <br>성장시키려 노력하는 개발자가 되겠습니다.
+                    </div>                    
+                    <div class="korean">이로아</div>                    
+                    <div class="korean">연락처 : <span id="phone_num">010 2725 7717</span></div>                    
+                    <div id="email_btn">notagameroa@gmail.com</div>                    
+                </div>
+                <div id="me_img"></div>
             </div>
             <div class="main_bottom">
                 <div class="main_bottom_like_div">
                     <div>
-                        <span class="material-symbols-outlined like_btns content_like_btn">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn push_like 6" data-like="6">favorite</span>
+                        <span class="material-symbols-outlined like_btns content_like_btn like_6" data-like="6">favorite</span>
                     </div>
                     <div>
                         <span class="material-symbols-outlined like_btns content_share_btn">near_me</span>
@@ -498,7 +593,9 @@
                 <div class="main_bottom_comment_div">
                     <div class="comment_div">
                         <div class="user_name">LeeRoa</div>
-                        <div class="user_comment">Hi! I’m a Full-Stack Developer. 😊 Would you be willing to listen to my story, please?</div>
+                        <div class="user_comment">
+                            e-mail과 연락처는 클릭하면 클립보드에 복사가 됩니다!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -523,10 +620,10 @@
                     <img src="css/assets/mail_profile.png" alt="">
                 </a>
                 <div class="commend_detail_div">
-                    <a href="" class="commend_div_title">mail</a>
+                    <a href="mailto:notagameroa@gmail.com" class="commend_div_title">mail</a>
                     <div class="commend_div_content korean">이로아님에게 메일 보내기</div>
                 </div>
-                <a class="link_go_btn korean">팔로우</a>
+                <a href="mailto:notagameroa@gmail.com" class="link_go_btn korean">팔로우</a>
             </div>
             <div id="blog_div" class="commend_div">
                 <a href="https://roajava.tistory.com/">

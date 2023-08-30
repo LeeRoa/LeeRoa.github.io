@@ -93,8 +93,12 @@ $(window).scroll(function () {
 
 // bookmark btn copy active
 const notification = $('#notification-container');
+const email = $('#email-container');
+const phone = $('#phone-container');
 
 notification.addClass('hide');
+email.addClass('hide');
+phone.addClass('hide');
 
 // Show notification
 const showNotification = () => {
@@ -104,7 +108,28 @@ const showNotification = () => {
         notification.removeClass('show');
         notification.addClass('hide');
     }, 2000)
-  }
+}
+
+// Show email
+const showEmail = () => {
+    email.addClass('show');
+    email.removeClass('hide');
+    setTimeout(() => {
+        email.removeClass('show');
+        email.addClass('hide');
+    }, 2000)
+}
+
+// Show phone
+const showPhone = () => {
+    phone.addClass('show');
+    phone.removeClass('hide');
+    setTimeout(() => {
+        phone.removeClass('show');
+        phone.addClass('hide');
+    }, 2000)
+}
+
   $(document).ready(function() {
     $(".content_bookmark_btn").click(function() {
         var textToCopy = $(".web_link").val(); // 복사할 텍스트를 가져옵니다.
@@ -113,6 +138,36 @@ const showNotification = () => {
             .then(function(e) {
                     //we want only letters that are not already pressed
                     showNotification();
+                  }
+            )
+            .catch(function(error) {
+                alert("클립보드 복사 중 오류가 발생했습니다.");
+                console.error(error);
+            });
+    });
+    
+    $("#email_btn").click(function() {
+        var textToCopy = $("#email_btn").text(); // 복사할 텍스트를 가져옵니다.
+        // Clipboard API를 사용하여 텍스트를 클립보드에 복사합니다.
+        navigator.clipboard.writeText(textToCopy)
+            .then(function(e) {
+                    //we want only letters that are not already pressed
+                    showEmail();
+                  }
+            )
+            .catch(function(error) {
+                alert("클립보드 복사 중 오류가 발생했습니다.");
+                console.error(error);
+            });
+    });
+    
+    $("#phone_num").click(function() {
+        var textToCopy = "010-2725-7717"; // 복사할 텍스트를 가져옵니다.
+        // Clipboard API를 사용하여 텍스트를 클립보드에 복사합니다.
+        navigator.clipboard.writeText(textToCopy)
+            .then(function(e) {
+                    //we want only letters that are not already pressed
+                    showPhone();
                   }
             )
             .catch(function(error) {
@@ -133,8 +188,6 @@ const otherDiv = $('#other_div');
 
 // 콘텐츠 prev, next btn active
 const skillsDiv = $('.skills_div');
-
-console.log(skillsDiv);
 
 prevBtn.click(function (e) {
     if (skillContent.hasClass('view_1')) {
@@ -196,3 +249,90 @@ nextBtn.click(function (e) {
         skillContent.addClass('view_3');
     }
 });
+
+// think me pagination
+const thinkDiv = $('#think_me_grid');
+const thinkPrevBtn = $('#think_prev_btn');
+const thinkNextBtn = $('#think_next_btn');
+const pageTran = [0, -300, -600, -900, -1200];
+
+if (thinkDiv.hasClass('page_1')) {
+    thinkPrevBtn.hide();
+}
+
+thinkPrevBtn.click(function (e) {
+    if (thinkDiv.hasClass('page_2')) {
+        thinkDiv.removeClass('page_2');
+        thinkDiv.addClass('page_1');
+        thinkPrevBtn.hide();
+        thinkNextBtn.show();
+        thinkDiv.css('transform', `translate(${pageTran[0]}px)`);
+    } else if (thinkDiv.hasClass('page_3')) {
+        thinkDiv.removeClass('page_3');
+        thinkDiv.addClass('page_2');
+        thinkNextBtn.show();
+        thinkDiv.css('transform', `translate(${pageTran[1]}px)`);
+    } else if (thinkDiv.hasClass('page_4')) {
+        thinkDiv.removeClass('page_4');
+        thinkDiv.addClass('page_3');
+        thinkNextBtn.show();
+        thinkDiv.css('transform', `translate(${pageTran[2]}px)`);
+    }
+});
+
+thinkNextBtn.click(function (e) {
+    if (thinkDiv.hasClass('page_2')) {
+        thinkDiv.removeClass('page_2');
+        thinkDiv.addClass('page_3');
+        thinkPrevBtn.show();
+        thinkDiv.css('transform', `translate(${pageTran[2]}px)`);
+    } else if (thinkDiv.hasClass('page_1')) {
+        thinkDiv.removeClass('page_1');
+        thinkDiv.addClass('page_2');
+        thinkPrevBtn.show();
+        thinkDiv.css('transform', `translate(${pageTran[1]}px)`);
+    } else if (thinkDiv.hasClass('page_3')) {
+        thinkDiv.removeClass('page_3');
+        thinkDiv.addClass('page_4');
+        thinkNextBtn.show();
+        thinkNextBtn.hide();
+        thinkDiv.css('transform', `translate(${pageTran[3]}px)`);
+    }
+});
+
+const likeBtn = $('.like_btns');
+const FullLikeBtn = $('.push_like');
+
+FullLikeBtn.hide();
+
+$(likeBtn).click(function(e) {
+    console.log(e.target);
+    const num = $(e.target).data('like') - 1;
+    $(FullLikeBtn[num]).toggle();
+});
+
+// share like
+$('.content_share_btn').click(function () {
+    sharePage();
+});
+
+function sharePage() {
+    const shareObject = {
+      title: '이로아의 포트폴리오 웹사이트',
+      text: '이로아의 포트폴리오 웹사이트',
+      url: 'https://leeroa.github.io/',
+    };
+  
+    if (navigator.share) { // Navigator를 지원하는 경우만 실행
+      navigator
+        .share(shareObject)
+        .then(() => {
+          // 정상 동작할 경우 실행
+        })
+        .catch((error) => {
+          alert('에러가 발생했습니다.')
+        })
+    } else { // navigator를 지원하지 않는 경우
+      alert('페이지 공유를 지원하지 않습니다.')
+    }
+  }
