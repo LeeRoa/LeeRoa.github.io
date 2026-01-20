@@ -11,6 +11,11 @@ permissions:
 
 jobs:
   build_and_deploy:
+    # 이 부분이 추가되어야 합니다
+    environment:
+      name: github-pages
+      url: ${{ steps:deployment.outputs.page_url }}
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,6 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # 아까 확인한 빌드 폴더명 유지
           path: './build'
 
       - name: Deploy to GitHub Pages
