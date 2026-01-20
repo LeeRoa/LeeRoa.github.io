@@ -58,5 +58,5 @@
             "predeploy": "npm run build",
             "deploy": "gh-pages -d build"
       },
-      "homepage": "https://https://leeroa.github.io/#portfolio"
+      "homepage": "https://leeroa.github.io"
 }
