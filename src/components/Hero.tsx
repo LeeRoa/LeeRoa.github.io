@@ -24,8 +24,7 @@ export function Hero() {
             </h2>
             
             <p className="text-lg text-slate-400 max-w-2xl leading-relaxed">
-              사용자에게 가치 있는 경험을 제공하기 위해 효율적이고 확장 가능한 웹 서비스를 만듭니다. 
-              단순한 코딩을 넘어 복잡한 문제를 우아한 솔루션으로 해결하는 과정에 즐거움을 느낍니다.
+              편리한 도구에 의존하기보다 코드의 작동 원리를 깊이 이해하고 주도하는 것을 선호합니다. 남들이 보지 못하는 문제의 본질을 파고들어, 가장 효율적이고 확장 가능한 서비스를 직접 설계하고 구축합니다.
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
@@ -56,7 +55,7 @@ export function Hero() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/in/[내-아이디]" // 링크드인 ID 수정 필요
+                href="https://linkedin.com/in/로아-이-1386583a7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-slate-800/50 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors text-white"
