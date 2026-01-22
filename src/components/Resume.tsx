@@ -1,4 +1,4 @@
-import { GraduationCap, Code2, Database, Cloud, Wrench, BookOpen } from "lucide-react";
+import {GraduationCap, Code2, Database, Cloud, Wrench, BookOpen, Layout, Terminal} from "lucide-react";
 
 // 1. 학력 데이터 (공식 학위)
 const degrees = [
@@ -43,22 +43,32 @@ const skillCategories = [
   {
     icon: Code2,
     title: "언어 (Languages)",
-    skills: ["Java", "Python", "JavaScript/TypeScript", "SQL"]
+    skills: ["Java", "SQL", "Python"]
   },
   {
     icon: Wrench,
-    title: "프레임워크 (Frameworks)",
-    skills: ["Spring Boot", "Django", "NestJS", "React"]
+    title: "백엔드 (Backend)",
+    skills: ["Spring Boot", "Spring Framework", "JPA (Hibernate)", "Spring Security"]
+  },
+  {
+    icon: Layout,
+    title: "프론트엔드 (Frontend)",
+    skills: ["React", "TypeScript", "JavaScript", "HTML/CSS"]
   },
   {
     icon: Database,
     title: "데이터베이스 (Databases)",
-    skills: ["MySQL", "Oracle", "Redis", "MongoDB"]
+    skills: ["MySQL (MariaDB)", "Oracle", "MSSQL"]
   },
   {
     icon: Cloud,
-    title: "인프라 & 도구 (DevOps)",
-    skills: ["AWS", "Docker", "Kubernetes", "Git/GitHub"]
+    title: "서버 & 인프라 (Infra)",
+    skills: ["AWS", "Azure", "Docker", "Linux"]
+  },
+  {
+    icon: Terminal,
+    title: "도구 & 협업 (Tools)",
+    skills: ["Git", "GitHub", "Gradle", "Postman"]
   }
 ];
 
