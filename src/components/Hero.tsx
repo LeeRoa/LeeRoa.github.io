@@ -29,8 +29,9 @@ export function Hero() {
             
             <div className="flex flex-wrap gap-4 pt-4">
               <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition-colors"
+                  href="/files/백엔드개발자_이력서_이로아.pdf"
+                  download="이로아_이력서.pdf"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition-colors"
               >
                 <Download className="w-5 h-5" />
                 이력서 다운로드
