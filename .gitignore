@@ -30,3 +30,6 @@ pnpm-debug.log*
 # 시스템 파일 (macOS, Windows)
 .DS_Store
 Thumbs.db
+
+# 빌드 결과물
+build/
