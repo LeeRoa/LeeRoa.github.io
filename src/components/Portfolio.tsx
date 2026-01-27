@@ -40,7 +40,8 @@ const projects = [
     image: "https://placehold.co/600x400/1e293b/06b6d4?text=PDF+Extractor",
     tags: ["Python", "PyMuPDF", "Tkinter", "Desktop App"],
     github: "https://github.com/LeeRoa/pdf-extractor",
-    demo: ""
+    demo: "",
+    download: "/files/pdf-extractor.exe"
   }
 ];
 
