@@ -26,6 +26,22 @@ const projects = [
     github: "https://github.com/LeeRoa/npki-sign-util.git",
     demo: ""
   },
+  {
+    title: "README Auto Generator (AI 기반 문서 자동 생성)",
+    description: "프로젝트 폴더나 GitHub URL을 입력하면 AI가 코드를 분석하여 전문적인 README.md를 자동으로 생성해주는 웹 서비스입니다. Google Gemini API를 활용하며, 한국어/영어 지원 및 실시간 마크다운 미리보기 기능을 제공합니다.",
+    image: "https://placehold.co/600x400/1e293b/06b6d4?text=README+Generator",
+    tags: ["Python", "FastAPI", "Google Gemini", "JavaScript", "Tailwind CSS"],
+    github: "https://github.com/LeeRoa/readme-generator",
+    demo: "https://readme-generator-4mxy.onrender.com"
+  },
+  {
+    title: "PDF Extractor & Merger (PDF 추출/병합 도구)",
+    description: "PDF 파일에서 원하는 페이지만 추출하거나 여러 PDF를 하나로 병합할 수 있는 데스크탑 유틸리티입니다. PyMuPDF 라이브러리를 활용하여 빠르고 정확한 PDF 처리를 지원합니다.",
+    image: "https://placehold.co/600x400/1e293b/06b6d4?text=PDF+Extractor",
+    tags: ["Python", "PyMuPDF", "Tkinter", "Desktop App"],
+    github: "https://github.com/LeeRoa/pdf-extractor",
+    demo: ""
+  }
 ];
 
 export function Portfolio() {
