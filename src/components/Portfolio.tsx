@@ -29,7 +29,7 @@ const projects = [
   {
     title: "README Auto Generator (AI 기반 문서 자동 생성)",
     description: "프로젝트 폴더나 GitHub URL을 입력하면 AI가 코드를 분석하여 전문적인 README.md를 자동으로 생성해주는 웹 서비스입니다. Google Gemini API를 활용하며, 한국어/영어 지원 및 실시간 마크다운 미리보기 기능을 제공합니다.",
-    image: "https://placehold.co/600x400/1e293b/06b6d4?text=README+Generator",
+    image: "/images/readme_auto.png",
     tags: ["Python", "FastAPI", "Google Gemini", "JavaScript", "Tailwind CSS"],
     github: "https://github.com/LeeRoa/readme-generator",
     demo: "https://readme-generator-4mxy.onrender.com"
