@@ -16,7 +16,7 @@ const projects = [
     image: "https://placehold.co/600x400/1e293b/06b6d4?text=Project+Jiburo+(Dev)",
     tags: ["Spring Boot", "JPA", "Docker", "In Progress", "Open API", "Pet Service", "Toy Project"],
     github: "https://github.com/LeeRoa/jiburo-server",
-    demo: "" // 데모 값이 비어있음 -> 버튼 안 나옴
+    demo: "https://jiburo.on-do.kro.kr/swagger-ui/index.html"
   },
   {
     title: "NPKI Certificate Utility (오픈소스 라이브러리)",
