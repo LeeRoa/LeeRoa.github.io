@@ -37,7 +37,7 @@ const projects = [
   {
     title: "PDF Extractor & Merger (PDF 추출/병합 도구)",
     description: "PDF 파일에서 원하는 페이지만 추출하거나 여러 PDF를 하나로 병합할 수 있는 데스크탑 유틸리티입니다. PyMuPDF 라이브러리를 활용하여 빠르고 정확한 PDF 처리를 지원합니다.",
-    image: "https://placehold.co/600x400/1e293b/06b6d4?text=PDF+Extractor",
+    image: "/images/pdf_extractor.png",
     tags: ["Python", "PyMuPDF", "Tkinter", "Desktop App"],
     github: "https://github.com/LeeRoa/pdf-extractor",
     demo: "",
