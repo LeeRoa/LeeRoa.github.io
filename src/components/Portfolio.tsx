@@ -5,7 +5,7 @@ const projects = [
   {
     title: "ROTP (자체 구축 2FA 인증 시스템)",
     description: "표준 TOTP(Time-based One-Time Password) 알고리즘을 Java로 직접 구현하여 Google Authenticator와 호환되는 2차 인증 서버를 구축했습니다. React 기반의 관리자 대시보드와 연동되며, Nginx와 Docker Compose를 활용해 안정적인 배포 환경을 구성했습니다.",
-    image: "https://rotp.groamit.kro.kr/logo.png",
+    image: "/images/rotp_login.png",
     tags: ["Spring Boot", "JPA", "React", "TypeScript", "Docker", "Nginx", "TOTP/HMAC"],
     github: "https://github.com/LeeRoa/ROTP",
     demo: "https://rotp.groamit.kro.kr/"
